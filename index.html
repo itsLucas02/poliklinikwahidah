@@ -1,0 +1,1235 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Poliklinik Wahidah - Comprehensive GP Care in Malaysia</title>
+
+    <!-- SEO Meta Tags -->
+    <meta
+      name="description"
+      content="Poliklinik Wahidah is a leading GP clinic in [Your City], Malaysia, offering a full range of medical services. We accept a wide range of insurance panels. Book your appointment today."
+    />
+    <meta
+      name="keywords"
+      content="GP, General Practitioner, Klinik, Doctor, Malaysia, Poliklinik Wahidah, Health Screening, Insurance Panel, Klinik Panel"
+    />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Lato:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome for Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <style>
+      /* ================================================= */
+      /* === 1. GLOBAL STYLES & AESTHETIC ============== */
+      /* ================================================= */
+      :root {
+        --primary-color: #2c5f2d; /* Deep, trustworthy Forest Green */
+        --secondary-color: #f8f9fa; /* Clean, light grey background */
+        --accent-color: #97fb97; /* Bright, fresh Mint Green for accents */
+        --dark-text: #343a40;
+        --light-text: #ffffff;
+        --body-text: #555;
+        --border-color: #e9ecef;
+
+        --font-heading: "Poppins", sans-serif;
+        --font-body: "Lato", sans-serif;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: var(--font-body);
+        font-size: 16px;
+        line-height: 1.7;
+        color: var(--body-text);
+        background: var(--light-text);
+      }
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: var(--font-heading);
+        color: var(--primary-color);
+        font-weight: 600;
+      }
+      h2.section-title {
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        font-weight: 700;
+      }
+      .section-subtitle {
+        text-align: center;
+        max-width: 600px;
+        margin: 0 auto 4rem auto;
+        font-size: 1.1rem;
+      }
+      section {
+        padding: 6rem 0;
+      }
+      .btn {
+        display: inline-block;
+        background: var(--primary-color);
+        color: var(--light-text);
+        padding: 0.7em 1.8em; /* use em for font-relative scaling */
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 600;
+        font-family: var(--font-heading);
+        transition: all 0.3s ease;
+        border: 2px solid var(--primary-color);
+        line-height: normal; /* reset to normal for natural alignment */
+        vertical-align: middle; /* help baseline alignment */
+        position: relative;
+        top: -0.5px; /* 👈 subtle vertical nudge */
+      }
+      .btn:hover {
+        background: #224b23;
+        transform: translateY(-3px);
+      }
+      .btn-light {
+        background: var(--accent-color);
+        color: var(--primary-color);
+        border-color: var(--accent-color);
+      }
+      .btn-light:hover {
+        background: #86e086;
+        color: var(--primary-color);
+      }
+      .fade-in-up {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: opacity 0.8s ease-out, transform 0.6s ease-out;
+      }
+      .fade-in-up.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* ================================================= */
+      /* === 2. HEADER: TOP BAR & NAVIGATION =========== */
+      /* ================================================= */
+      #top-bar {
+        background: var(--primary-color);
+        color: var(--light-text);
+        padding: 0.5rem 2rem;
+        font-size: 0.9rem;
+      }
+      #top-bar .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      #top-bar a {
+        color: var(--accent-color);
+        text-decoration: none;
+        font-weight: bold;
+      }
+      #top-bar i {
+        margin-right: 0.5rem;
+      }
+      .navbar {
+        background: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(10px);
+        padding: 1rem 2rem;
+        position: sticky;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      }
+      .navbar .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .navbar .logo {
+        font-family: var(--font-heading);
+        font-size: 1.75rem;
+        font-weight: 700;
+        color: var(--primary-color);
+        text-decoration: none;
+      }
+      .navbar .nav-links {
+        display: flex;
+        list-style: none;
+        align-items: center;
+      }
+      .navbar .nav-links li {
+        margin-left: 2.5rem;
+      }
+      .navbar .nav-links a {
+        color: var(--dark-text);
+        text-decoration: none;
+        font-weight: 600;
+        padding-bottom: 5px;
+        position: relative;
+      }
+      .navbar .nav-links a:not(.btn)::after {
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 0%;
+        height: 2px;
+        background: var(--primary-color);
+        transition: width 0.3s ease;
+      }
+      .navbar .nav-links a:hover::after,
+      .navbar .nav-links a.active::after {
+        width: 100%;
+      }
+      .hamburger {
+        display: none;
+      }
+
+      /* Ticker Wrapper */
+      .ticker-wrapper {
+        width: 100%;
+        background: #1e4620; /* darker green */
+        overflow: hidden;
+        height: 40px;
+        display: flex;
+        align-items: center;
+      }
+
+      .ticker {
+        display: inline-block;
+        white-space: nowrap;
+        padding-left: 100%;
+        animation: ticker-scroll 20s linear infinite;
+      }
+
+      .ticker p {
+        display: inline-block;
+        color: #97fb97; /* mint green text */
+        font-weight: bold;
+        font-size: 0.95rem;
+      }
+
+      @keyframes ticker-scroll {
+        from {
+          transform: translateX(0%);
+        }
+        to {
+          transform: translateX(-100%);
+        }
+      }
+
+      /* ================================================= */
+      /* === 3. HERO SECTION ============================= */
+      /* ================================================= */
+      .hero {
+        background: linear-gradient(
+            rgba(255, 255, 255, 0.85),
+            rgba(255, 255, 255, 0.85)
+          ),
+          url("Logo/PWBHD.jpg") no-repeat center center/cover;
+        padding: 8rem 0;
+        height: 90vh;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        text-align: left;
+      }
+
+      .hero-content {
+        max-width: 650px;
+        margin-left: 5%;
+      }
+
+      .hero h1 {
+        font-size: 3.8rem;
+        font-weight: 700;
+        line-height: 1.2;
+        margin-bottom: 1.5rem;
+      }
+      .hero p {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+      }
+
+      /* Dark Hero */
+      /* Ctrl + K + C for commenting code */
+
+      .hero-dark {
+        background: #2c5f2d;
+        color: white;
+        padding: 6rem 0;
+        text-align: center;
+      }
+
+      .hero-dark-content h1,
+      .hero-dark-content p {
+        color: white;
+      }
+
+      /* ================================================= */
+      /* === 4. 'WHY CHOOSE US' & SERVICES SECTIONS ==== */
+      /* ================================================= */
+      .features-grid,
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+      }
+      .feature-card,
+      .service-card {
+        background: var(--light-text);
+        padding: 2rem;
+        text-align: center;
+        border-radius: 10px;
+        border: 1px solid var(--border-color);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .feature-card:hover,
+      .service-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(44, 95, 45, 0.1);
+      }
+      .feature-card .icon,
+      .service-card .icon {
+        font-size: 3rem;
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+        display: inline-block;
+        background: #e8f5e9;
+        width: 80px;
+        height: 80px;
+        line-height: 80px;
+        border-radius: 50%;
+      }
+      #services {
+        background-color: var(--secondary-color);
+      }
+
+      /* ================================================= */
+      /* === 5. INSURANCE PANEL SECTION (FIXED) ========== */
+      /* ================================================= */
+      .panel-grid {
+        display: grid;
+        /* FIX: Enforce a 4-column layout on desktop */
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.5rem;
+        align-items: center;
+      }
+      .panel-logo-container {
+        background: white;
+        padding: 1.5rem;
+        height: 90px;
+        border-radius: 8px;
+        border: 1px solid var(--border-color);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.3s ease;
+      }
+      .panel-logo-container:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
+      }
+      .panel-logo-container img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+        filter: grayscale(100%);
+        opacity: 0.7;
+        transition: all 0.3s ease;
+      }
+      .panel-logo-container:hover img {
+        filter: grayscale(0%);
+        opacity: 1;
+      }
+
+      /* ================================================= */
+      /* === 6. APPOINTMENT FORM SECTION ================= */
+      /* ================================================= */
+      #appointment {
+        background: var(--secondary-color);
+      }
+      .appointment-form {
+        max-width: 800px;
+        margin: auto;
+        background: white;
+        padding: 3rem;
+        border-radius: 10px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      }
+      .form-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+      }
+      .form-group {
+        margin-bottom: 1.5rem;
+      }
+      .full-width {
+        grid-column: 1 / -1;
+      }
+      .form-group label {
+        display: block;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        color: var(--dark-text);
+      }
+      .form-group input,
+      .form-group select,
+      .form-group textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid var(--border-color);
+        border-radius: 5px;
+        font-family: var(--font-body);
+        font-size: 1rem;
+      }
+      .form-group textarea {
+        resize: vertical;
+        min-height: 120px;
+      }
+
+      /* ================================================= */
+      /* === 7. DOCTORS & FAQ SECTIONS (FIXED) =========== */
+      /* ================================================= */
+      .doctors-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+        justify-content: center;
+      }
+      .doctor-card {
+        text-align: center;
+        background: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        border: 1px solid var(--border-color);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .doctor-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 15px 30px rgba(44, 95, 45, 0.1);
+      }
+      .doctor-card img {
+        width: 100%;
+        height: 320px;
+        object-fit: cover;
+        /* FIX: Prioritize the top of the image to prevent faces from being cut off */
+        object-position: top center;
+      }
+      .doctor-info {
+        padding: 1.5rem;
+      }
+      .doctor-info h4 {
+        font-size: 1.25rem;
+        margin-bottom: 0.25rem;
+      }
+      .doctor-info p {
+        color: var(--primary-color);
+        font-weight: bold;
+        font-size: 0.9rem;
+      }
+
+      #faq {
+        background-color: var(--secondary-color);
+      }
+      .faq-accordion {
+        max-width: 800px;
+        margin: auto;
+      }
+      .faq-item {
+        background: white;
+        margin-bottom: 1rem;
+        border-radius: 8px;
+        border: 1px solid var(--border-color);
+      }
+      .faq-question {
+        width: 100%;
+        background: none;
+        border: none;
+        text-align: left;
+        padding: 1.5rem;
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: var(--dark-text);
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .faq-question i {
+        transition: transform 0.3s ease;
+      }
+      .faq-item.active .faq-question i {
+        transform: rotate(180deg);
+      }
+      .faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+      }
+      .faq-answer p {
+        padding: 0 1.5rem 1.5rem;
+        margin: 0;
+      }
+      .faq-item.active .faq-answer {
+        max-height: 300px;
+      }
+
+      /* ================================================= */
+      /* === 8. CONTACT & FOOTER (FIXED) ================= */
+      /* ================================================= */
+      .contact-grid {
+        display: grid;
+        grid-template-columns: 1fr 1.2fr;
+        gap: 4rem;
+        align-items: center;
+        background: white;
+        padding: 4rem;
+        border-radius: 10px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      }
+      .contact-details h3 {
+        margin-bottom: 2rem;
+      }
+      .contact-details li {
+        list-style: none;
+        margin-bottom: 2rem;
+        display: flex;
+        align-items: flex-start;
+      }
+      .contact-details i {
+        font-size: 1.5rem;
+        color: var(--primary-color);
+        margin-right: 1.5rem;
+        width: 25px;
+      }
+      /* NEW: Styling for links in the contact section */
+      .contact-details a {
+        color: var(--primary-color);
+        text-decoration: none;
+        font-weight: 600;
+        transition: color 0.3s ease;
+      }
+      .contact-details a:hover {
+        color: #224b23; /* Darker shade of primary */
+        text-decoration: underline;
+      }
+      .map-container {
+        border-radius: 8px;
+        overflow: hidden;
+        height: 100%;
+        min-height: 400px;
+      }
+      .map-container iframe {
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+
+      footer {
+        background: var(--dark-text);
+        color: #ccc;
+        padding: 4rem 0 2rem 0;
+      }
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+        gap: 2rem;
+        margin-bottom: 3rem;
+        border-bottom: 1px solid #555;
+        padding-bottom: 3rem;
+      }
+      .footer-grid h4 {
+        color: var(--light-text);
+        margin-bottom: 1rem;
+      }
+      .footer-grid ul {
+        list-style: none;
+      }
+      .footer-grid li {
+        margin-bottom: 0.75rem;
+      }
+      .footer-grid a {
+        color: #ccc;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+      .footer-grid a:hover {
+        color: var(--accent-color);
+      }
+      .footer-bottom {
+        text-align: center;
+        font-size: 0.9rem;
+      }
+      .social-links a {
+        color: #ccc;
+        font-size: 1.2rem;
+        margin-right: 1rem;
+      }
+
+      /* Back to Top Button */
+      #backToTop {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        z-index: 999;
+        background: var(--primary-color);
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 48px;
+        height: 48px;
+        font-size: 1.25rem;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        transition: opacity 0.3s ease;
+      }
+
+      #backToTop:hover {
+        background: #224b23;
+      }
+
+      /* ================================================= */
+      /* === 9. RESPONSIVE DESIGN (UPDATED) ============= */
+      /* ================================================= */
+      @media (max-width: 992px) {
+        .navbar .nav-links {
+          display: none;
+        }
+        .hamburger {
+          display: block;
+          font-size: 1.8rem;
+          cursor: pointer;
+          color: var(--primary-color);
+        }
+        .nav-links.active {
+          display: flex;
+          flex-direction: column;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          width: 100%;
+          background: white;
+          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+          padding: 1rem 0;
+        }
+        .nav-links.active li {
+          margin: 1rem 0;
+        }
+        .hero h1 {
+          font-size: 3rem;
+        }
+        .contact-grid {
+          grid-template-columns: 1fr;
+          padding: 2rem;
+        }
+        .footer-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .panel-grid {
+          grid-template-columns: repeat(3, 1fr);
+        } /* 3 logos on tablet */
+      }
+
+      @media (max-width: 768px) {
+        h2.section-title {
+          font-size: 2rem;
+        }
+        .hero {
+          text-align: center;
+        }
+        .hero-content {
+          max-width: 100%;
+        }
+        .form-grid {
+          grid-template-columns: 1fr;
+        }
+        .footer-grid {
+          grid-template-columns: 1fr;
+          text-align: center;
+        }
+        #top-bar .container {
+          flex-direction: column;
+          gap: 0.5rem;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .panel-grid {
+          grid-template-columns: repeat(2, 1fr);
+        } /* 2 logos on mobile */
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Top Bar -->
+
+    <div class="ticker-wrapper">
+      <div class="ticker">
+        <p>
+          📢 Cuti Aidiladha: Klinik ditutup pada 17 & 18 Jun 2025 • Buka semula
+          pada 19 Jun • Sila buat temujanji lebih awal. 📢
+        </p>
+      </div>
+    </div>
+
+    <div id="top-bar">
+      <div class="container">
+        <span
+          ><i class="fas fa-phone"></i> Hubungi Kami:
+          <a href="tel:+6062519500">+60 6-251 9500</a></span
+        >
+        <span
+          ><i class="fas fa-clock"></i> Waktu Operasi: Sabtu - Khamis, 9am -
+          9pm</span
+        >
+      </div>
+    </div>
+
+    <!-- Header Navigation -->
+    <header>
+      <nav class="navbar" id="navbar">
+        <div class="container">
+          <a href="#home" class="logo">Poliklinik Wahidah</a>
+          <ul class="nav-links" id="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#panels">Panels</a></li>
+            <li><a href="#doctors">Doctors</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li>
+              <a href="#appointment" class="btn btn-light">Book Appointment</a>
+            </li>
+          </ul>
+          <div class="hamburger" id="hamburger-menu">
+            <i class="fas fa-bars"></i>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Dark hero Section (Call if needed) -->
+      <!-- <section class="hero-dark">
+        <div class="container hero-dark-content">
+          <h1>Selamat Datang ke Poliklinik Wahidah</h1>
+          <p>Perkhidmatan Perubatan Berkualiti untuk Anda & Keluarga</p>
+          <a href="#appointment" class="btn btn-light">Buat Temujanji</a>
+        </div>
+      </section> -->
+
+      <!-- Hero Section -->
+      <section id="home" class="hero">
+        <div class="container">
+          <div class="hero-content fade-in-up">
+            <h1>Penjagaan Kesihatan Komprehensif Untuk Anda & Keluarga</h1>
+            <p>
+              Di Poliklinik Wahidah, kami menyediakan perkhidmatan perubatan
+              yang mesra, profesional dan mudah diakses. Kesihatan anda adalah
+              keutamaan kami.
+            </p>
+            <a href="#appointment" class="btn">Buat Temujanji</a>
+            <a
+              href="#services"
+              class="btn"
+              style="
+                background: transparent;
+                color: var(--primary-color);
+                margin-left: 1rem;
+              "
+              >Lihat Perkhidmatan</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- Why Choose Us -->
+      <section id="features">
+        <div class="container fade-in-up">
+          <h2 class="section-title">Kenapa Pilih Kami?</h2>
+          <p class="section-subtitle">
+            Kami komited untuk memberikan pengalaman penjagaan kesihatan yang
+            terbaik untuk setiap pesakit kami.
+          </p>
+          <div class="features-grid">
+            <div class="feature-card">
+              <div class="icon"><i class="fa-solid fa-user-doctor"></i></div>
+              <h3>Doktor Berpengalaman</h3>
+              <p>
+                Pasukan perubatan kami terdiri daripada doktor-doktor yang
+                berkelayakan tinggi dan berpengalaman luas.
+              </p>
+            </div>
+            <div class="feature-card">
+              <div class="icon"><i class="fa-solid fa-microscope"></i></div>
+              <h3>Fasiliti Moden</h3>
+              <p>
+                Klinik kami dilengkapi dengan peralatan perubatan moden untuk
+                diagnosis dan rawatan yang tepat.
+              </p>
+            </div>
+            <div class="feature-card">
+              <div class="icon">
+                <i class="fa-solid fa-hand-holding-heart"></i>
+              </div>
+              <h3>Mesra Pesakit</h3>
+              <p>
+                Kami mengutamakan keselesaan dan membina hubungan kepercayaan
+                dengan setiap pesakit kami.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Services Section -->
+      <section id="services">
+        <div class="container fade-in-up">
+          <h2 class="section-title">Perkhidmatan Kami</h2>
+          <p class="section-subtitle">
+            Kami menawarkan pelbagai perkhidmatan perubatan untuk memenuhi
+            keperluan kesihatan anda.
+          </p>
+          <div class="services-grid">
+            <div class="service-card">
+              <div class="icon"><i class="fa-solid fa-stethoscope"></i></div>
+              <h3>Konsultasi Am</h3>
+              <p>
+                Rawatan untuk demam, batuk, selsema dan penyakit umum yang lain.
+              </p>
+            </div>
+            <div class="service-card">
+              <div class="icon"><i class="fa-solid fa-heart-pulse"></i></div>
+              <h3>Saringan Kesihatan</h3>
+              <p>
+                Pakej pemeriksaan kesihatan yang komprehensif untuk individu dan
+                korporat.
+              </p>
+            </div>
+            <div class="service-card">
+              <div class="icon"><i class="fa-solid fa-syringe"></i></div>
+              <h3>Vaksinasi & Imunisasi</h3>
+              <p>
+                Menyediakan vaksin untuk kanak-kanak, dewasa, Haji/Umrah dan
+                pengembara.
+              </p>
+            </div>
+            <div class="service-card">
+              <div class="icon"><i class="fa-solid fa-baby"></i></div>
+              <h3>Kesihatan Ibu & Anak</h3>
+              <p>
+                Pemeriksaan antenatal, rawatan selepas bersalin dan kesihatan
+                kanak-kanak.
+              </p>
+            </div>
+            <div class="service-card">
+              <div class="icon"><i class="fa-solid fa-kit-medical"></i></div>
+              <h3>Prosedur Kecil</h3>
+              <p>
+                Rawatan luka, jahitan, cuci luka dan prosedur-prosedur kecil
+                yang lain.
+              </p>
+            </div>
+            <div class="service-card">
+              <div class="icon"><i class="fa-solid fa-file-medical"></i></div>
+              <h3>Pemeriksaan Perubatan</h3>
+              <p>
+                Pemeriksaan untuk pekerjaan, GDL, PSV, dan kemasukan ke
+                universiti.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Insurance Panels Section -->
+      <section id="panels">
+        <div class="container fade-in-up">
+          <h2 class="section-title">Panel Insurans & TPA Kami</h2>
+          <p class="section-subtitle">
+            Kami menerima pelbagai kad perubatan daripada syarikat insurans dan
+            TPA terkemuka di Malaysia.
+          </p>
+          <div class="panel-grid">
+            <div class="panel-logo-container">
+              <img src="Logo/aia-seeklogo.png" alt="AIA Insurance Logo" />
+            </div>
+            <div class="panel-logo-container">
+              <img
+                src="Logo/prudential-seeklogo.png"
+                alt="Prudential Insurance Logo"
+              />
+            </div>
+            <div class="panel-logo-container">
+              <img src="Logo/greatEastern.png" alt="Great Eastern Logo" />
+            </div>
+            <div class="panel-logo-container">
+              <img src="Logo/Allianz-logo.png" alt="Allianz Logo" />
+            </div>
+            <div class="panel-logo-container">
+              <img src="Logo/pmcare.png" alt="PMCare Logo" />
+            </div>
+            <div class="panel-logo-container">
+              <img src="Logo/govMy.png" alt="Government MyGov Logo" />
+            </div>
+            <div class="panel-logo-container">
+              <img src="Logo/healthConnect.png" alt="Health Connect Logo" />
+            </div>
+            <div class="panel-logo-container">
+              <img src="Logo/pdrm.png" alt="PDRM Panel Logo" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Appointment Form Section -->
+      <section id="appointment">
+        <div class="container fade-in-up">
+          <h2 class="section-title">Buat Temujanji Anda</h2>
+          <p class="section-subtitle">
+            Isi borang di bawah untuk menempah slot temujanji anda. Pihak kami
+            akan menghubungi anda untuk pengesahan.
+          </p>
+          <form class="appointment-form">
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="name">Nama Penuh</label
+                ><input type="text" id="name" name="name" required />
+              </div>
+              <div class="form-group">
+                <label for="phone">Nombor Telefon</label
+                ><input type="tel" id="phone" name="phone" required />
+              </div>
+              <div class="form-group">
+                <label for="date">Tarikh Pilihan</label
+                ><input type="date" id="date" name="date" required />
+              </div>
+              <div class="form-group">
+                <label for="time">Masa Pilihan</label
+                ><select id="time" name="time" required>
+                  <option value="">Pilih Masa</option>
+                  <option value="morning">Pagi (9am - 12pm)</option>
+                  <option value="afternoon">Tengahari (2pm - 5pm)</option>
+                  <option value="evening">Malam (6pm - 9pm)</option>
+                </select>
+              </div>
+              <div class="form-group full-width">
+                <label for="message">Sebab Temujanji (Pilihan)</label
+                ><textarea
+                  id="message"
+                  name="message"
+                  placeholder="Contoh: Demam dan batuk"
+                ></textarea>
+              </div>
+            </div>
+            <button
+              type="submit"
+              class="btn"
+              style="
+                width: 100%;
+                text-align: center;
+                margin-top: 1rem;
+                padding: 15px;
+              "
+            >
+              Hantar Permohonan
+            </button>
+          </form>
+        </div>
+      </section>
+
+      <!-- Our Doctors Section -->
+      <section id="doctors">
+        <div class="container fade-in-up">
+          <h2 class="section-title">Kenali Pasukan Doktor Kami</h2>
+          <div class="doctors-grid">
+            <div class="doctor-card">
+              <img
+                src="Logo/Dr Pics/FD1-doctor-7261806_1280.jpg"
+                alt="Dr. Wahidah Portrait"
+              />
+              <div class="doctor-info">
+                <h4>Dr. Wahidah Binti Ahmad</h4>
+                <p>MBBS (Malaya), FCGP</p>
+              </div>
+            </div>
+            <div class="doctor-card">
+              <img
+                src="Logo/Dr Pics/MD-ai-generated-9019520_1280.png"
+                alt="Dr. Khairul Portrait"
+              />
+              <div class="doctor-info">
+                <h4>Dr. Khairul Bin Ismail</h4>
+                <p>MD (UKM), DFM</p>
+              </div>
+            </div>
+            <div class="doctor-card">
+              <img
+                src="Logo/Dr Pics/FD2-ai-generated-9019517_1280.png"
+                alt="Dr. Aisyah Portrait"
+              />
+              <div class="doctor-info">
+                <h4>Dr. Aisyah Binti Razak</h4>
+                <p>MBChB (Otago)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ Section -->
+      <section id="faq">
+        <div class="container fade-in-up">
+          <h2 class="section-title">Soalan Lazim (FAQ)</h2>
+          <div class="faq-accordion">
+            <div class="faq-item">
+              <button class="faq-question">
+                Perlukah saya membuat temujanji?
+                <i class="fas fa-chevron-down"></i>
+              </button>
+              <div class="faq-answer">
+                <p>
+                  Temujanji adalah digalakkan untuk mengurangkan masa menunggu
+                  anda. Walau bagaimanapun, kami juga menerima pesakit
+                  'walk-in'.
+                </p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question">
+                Adakah klinik ini dibuka pada hari cuti umum?
+                <i class="fas fa-chevron-down"></i>
+              </button>
+              <div class="faq-answer">
+                <p>
+                  Klinik kami beroperasi seperti biasa pada kebanyakan cuti
+                  umum, kecuali pada hari pertama & kedua Hari Raya Aidilfitri.
+                  Sila hubungi kami untuk pengesahan.
+                </p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question">
+                Apakah kaedah pembayaran yang diterima?
+                <i class="fas fa-chevron-down"></i>
+              </button>
+              <div class="faq-answer">
+                <p>
+                  Kami menerima pembayaran secara tunai, kad kredit/debit, dan
+                  juga pembayaran melalui kod QR (DuitNow, GrabPay, TnG
+                  eWallet).
+                </p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question">
+                Berapakah anggaran kos untuk konsultasi?
+                <i class="fas fa-chevron-down"></i>
+              </button>
+              <div class="faq-answer">
+                <p>
+                  Kos konsultasi asas bermula dari RMXX. Kos akhir bergantung
+                  kepada jenis rawatan dan ubat-ubatan yang diperlukan. Sila
+                  hubungi kami untuk maklumat lanjut.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact & Location Section -->
+      <section id="contact">
+        <div class="container fade-in-up">
+          <h2 class="section-title">Hubungi & Kunjungi Kami</h2>
+          <div class="contact-grid">
+            <div class="contact-details">
+              <h3>Maklumat Perhubungan</h3>
+              <ul style="padding-left: 0">
+                <li>
+                  <i class="fas fa-map-marker-alt"></i>
+                  <div>
+                    <strong>Alamat:</strong><br />G-8, Jalan KC 1, Kota
+                    Cemerlang, 75450 Ayer Keroh, Melaka
+                  </div>
+                </li>
+                <li>
+                  <i class="fas fa-phone"></i>
+                  <div>
+                    <strong>Telefon:</strong><br /><a href="tel:+6062519500"
+                      >06-251 9500</a
+                    >
+                  </div>
+                </li>
+                <li>
+                  <i class="fas fa-envelope"></i>
+                  <div>
+                    <strong>Emel:</strong><br /><a
+                      href="mailto:contact@poliklinikwahidah.com.my"
+                      >contact@poliklinikwahidah.com.my</a
+                    >
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="map-container">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3986.690631869453!2d102.29140281135633!3d2.2688259977017062!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31d1e5734d2f8c9f%3A0x5b14efe180965fb8!2sPoliklinik%20Wahidah%20Sdn%20Bhd!5e0!3m2!1sen!2smy!4v1749968113293!5m2!1sen!2smy"
+                width="600"
+                height="450"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <h4>Poliklinik Wahidah</h4>
+            <p>
+              Menyediakan perkhidmatan perubatan yang berkualiti, mesra, dan
+              profesional untuk komuniti setempat.
+            </p>
+            <div class="social-links">
+              <a href="#" aria-label="Facebook"
+                ><i class="fab fa-facebook-f"></i></a
+              ><a href="#" aria-label="Instagram"
+                ><i class="fab fa-instagram"></i></a
+              ><a href="#" aria-label="WhatsApp"
+                ><i class="fab fa-whatsapp"></i
+              ></a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h4>Pautan Pantas</h4>
+            <ul>
+              <li><a href="#about">Mengenai Kami</a></li>
+              <li><a href="#services">Perkhidmatan</a></li>
+              <li><a href="#doctors">Pasukan Doktor</a></li>
+              <li><a href="#appointment">Temujanji</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Perkhidmatan Utama</h4>
+            <ul>
+              <li><a href="#services">Konsultasi Am</a></li>
+              <li><a href="#services">Saringan Kesihatan</a></li>
+              <li><a href="#services">Vaksinasi</a></li>
+              <li><a href="#services">Kesihatan Ibu & Anak</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Hubungi Kami</h4>
+            <ul>
+              <li>
+                <i class="fas fa-map-marker-alt"></i> Kota Cemerlang, Melaka
+              </li>
+              <li><i class="fas fa-phone"></i> +60 6-251 9500</li>
+              <li><i class="fas fa-envelope"></i> contact@pw.com.my</li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>© 2024 Poliklinik Wahidah. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <button id="backToTop" title="Back to Top">
+      <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const hamburger = document.getElementById("hamburger-menu");
+        const navLinks = document.getElementById("nav-links");
+        hamburger.addEventListener("click", () =>
+          navLinks.classList.toggle("active")
+        );
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting)
+                entry.target.classList.add("is-visible");
+            });
+          },
+          { threshold: 0.1 }
+        );
+        document
+          .querySelectorAll(".fade-in-up")
+          .forEach((el) => observer.observe(el));
+        const faqItems = document.querySelectorAll(".faq-item");
+        faqItems.forEach((item) => {
+          item.querySelector(".faq-question").addEventListener("click", () => {
+            const currentlyActive = document.querySelector(".faq-item.active");
+            if (currentlyActive && currentlyActive !== item)
+              currentlyActive.classList.remove("active");
+            item.classList.toggle("active");
+          });
+        });
+        const form = document.querySelector(".appointment-form");
+        form.addEventListener("submit", (e) => {
+          e.preventDefault();
+          alert(
+            "Terima kasih! Permohonan temujanji anda telah dihantar. Pihak kami akan menghubungi anda untuk pengesahan."
+          );
+          form.reset();
+        });
+      });
+
+      // Back to Top Button
+      const backToTopBtn = document.getElementById("backToTop");
+
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 300) {
+          backToTopBtn.style.display = "flex";
+        } else {
+          backToTopBtn.style.display = "none";
+        }
+      });
+
+      backToTopBtn.addEventListener("click", () => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      });
+    </script>
+  </body>
+</html>
