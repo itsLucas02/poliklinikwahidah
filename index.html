@@ -106,6 +106,8 @@
         vertical-align: middle; /* help baseline alignment */
         position: relative;
         top: -0.5px; /* 👈 subtle vertical nudge */
+        min-width: 180px;
+        text-align: center;
       }
       .btn:hover {
         background: #224b23;
@@ -249,12 +251,17 @@
             rgba(255, 255, 255, 0.85)
           ),
           url("Logo/PWBHD.jpg") no-repeat center center/cover;
-        padding: 8rem 0;
-        height: 90vh;
+        padding: 6rem 2rem;
+        height: 100vh; /* force it to stay full screen */
+        max-height: 100vh;
         display: flex;
         align-items: center;
-        justify-content: flex-start;
         text-align: left;
+      }
+
+      .hero-content {
+        max-width: 650px;
+        margin-left: 5%;
       }
 
       .hero-content {
@@ -271,6 +278,14 @@
       .hero p {
         font-size: 1.2rem;
         margin-bottom: 2rem;
+      }
+
+      .hero-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 2rem;
       }
 
       /* Dark Hero */
@@ -685,6 +700,22 @@
         .panel-grid {
           grid-template-columns: repeat(2, 1fr);
         } /* 2 logos on mobile */
+        .hero {
+          background-position: center top;
+          padding: 4rem 1rem;
+        }
+        .hero h1 {
+          font-size: 1.9rem;
+        }
+        .hero p {
+          font-size: 1rem;
+        }
+        .btn {
+          display: block;
+          width: 100%;
+          max-width: 300px;
+          margin: 0 auto 1rem auto;
+        }
       }
     </style>
   </head>
@@ -755,17 +786,10 @@
               yang mesra, profesional dan mudah diakses. Kesihatan anda adalah
               keutamaan kami.
             </p>
-            <a href="#appointment" class="btn">Buat Temujanji</a>
-            <a
-              href="#services"
-              class="btn"
-              style="
-                background: transparent;
-                color: var(--primary-color);
-                margin-left: 1rem;
-              "
-              >Lihat Perkhidmatan</a
-            >
+            <div class="hero-buttons">
+              <a href="#appointment" class="btn">Buat Temujanji</a>
+              <a href="#services" class="btn btn-light">Lihat Perkhidmatan</a>
+            </div>
           </div>
         </div>
       </section>
